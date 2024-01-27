@@ -1,5 +1,6 @@
 package com.gavavision.almacen.services;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,26 +11,30 @@ import com.gavavision.almacen.entity.Producto;
 import com.gavavision.almacen.repository.ProductoRepository;
 
 @Service
-public class ProductoServiceImpl implements ProductoService {
+public class ProductoServiceImpl implements ProductoService{
 
+	
 	@Autowired
-	private ProductoRepository productoRepository;
-	
-	
+	private ProductoRepository productoRepository ;
+
 	@Override
-	public Producto save(Producto producto) {
-		return productoRepository.save(producto);
+	public List<Producto> listar() {
+		return (List<Producto>)productoRepository.findAll();
 	}
 
 	@Override
-	public Optional<Producto> get(Integer id_produc) {
+	public Optional<Producto> listarId(Integer id_produc) {
 		return productoRepository.findById(id_produc);
 	}
 
 	@Override
-	public void update(Producto producto) {
-		productoRepository.save(producto);
-		
+	public int save(Producto p) {
+		int rest=0;
+		Producto producto=productoRepository.save(p);
+		if(!producto.equals(null)) {
+			rest=1;
+		}
+		return rest;
 	}
 
 	@Override
@@ -38,9 +43,9 @@ public class ProductoServiceImpl implements ProductoService {
 		
 	}
 
-	@Override
-	public List<Producto> findAll() {
-		return productoRepository.findAll();
-	}
+	
+
+    
+	
 
 }

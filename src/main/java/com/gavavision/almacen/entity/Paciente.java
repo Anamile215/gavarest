@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 @Table(name = "Pacientes")
 public class Paciente implements Serializable{
 	   /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -27,7 +27,7 @@ public class Paciente implements Serializable{
 	   private String apellidos;
 	   private String email;
 	   private String celular;
-	   
+
 	   @OneToMany(mappedBy = "paciente")
 	   private List<Egreso>egreso;
 
@@ -102,7 +102,7 @@ public class Paciente implements Serializable{
 	public void setEgreso(List<Egreso> egreso) {
 		this.egreso = egreso;
 	}
-	   
-	   
-	   
+
+
+
 }

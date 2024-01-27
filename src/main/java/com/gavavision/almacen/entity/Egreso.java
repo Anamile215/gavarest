@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @Table(name = "Egresos")
 public class Egreso implements Serializable{
 	   /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -25,10 +25,10 @@ public class Egreso implements Serializable{
 	   private int idEgresos;
 	   private Date fecha_Egreso;
 	   private double total_Egreso;
-	   
+
 	   @ManyToOne
 	   private Paciente paciente;
-	   
+
 	   @OneToOne(mappedBy = "egreso")
 	   private DetalleEgreso detalleEgreso;
 
@@ -85,7 +85,7 @@ public class Egreso implements Serializable{
 	public void setDetalleEgreso(DetalleEgreso detalleEgreso) {
 		this.detalleEgreso = detalleEgreso;
 	}
-	   
-	   
+
+
 
 }

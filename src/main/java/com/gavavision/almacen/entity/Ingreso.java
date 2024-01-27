@@ -2,6 +2,7 @@ package com.gavavision.almacen.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +17,7 @@ import jakarta.persistence.Table;
 @Table(name = "Ingresos")
 public class Ingreso implements Serializable {
 	   /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -25,10 +26,10 @@ public class Ingreso implements Serializable {
 	   private Date fecha_Ingreso;
 	   private double total_Ingreso;
 	   private String Observaciones;
-	   
+
 	   @ManyToOne
 	    private Proveedor proveedor;
-	   
+
 	   @OneToOne(mappedBy = "ingreso")
 	   private DetalleIngreso detalleIngreso;
 
@@ -98,6 +99,6 @@ public class Ingreso implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	   
-	   
+
+
 }

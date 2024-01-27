@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 @Table(name = "DetalleIngresos")
 public class DetalleIngreso implements Serializable {
 	   /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -24,10 +24,10 @@ public class DetalleIngreso implements Serializable {
 	   private int cantidad_Ing;
 	   private double precioUni;
 	   private double total_Ing;
-	   
+
 	  @OneToOne
 	  private Ingreso ingreso;
-	   
+
 	  @ManyToOne
 	  private Producto producto;
 
@@ -97,6 +97,6 @@ public class DetalleIngreso implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	  
-	  
+
+
 }

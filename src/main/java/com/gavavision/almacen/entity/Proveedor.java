@@ -9,14 +9,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-     
+
 
 
     @Entity
     @Table(name = "Proveedores")
     public class Proveedor implements Serializable {
 	    /**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = 1L;
 		@Id
@@ -27,8 +27,8 @@ import jakarta.persistence.Table;
 	    private String telefono;
 	    private String direccion;
 	    private String ciudad;
-	    
-	    
+
+
 	   @OneToMany(mappedBy = "proveedor")
 	   private List<Ingreso>ingreso;
 
@@ -124,7 +124,15 @@ import jakarta.persistence.Table;
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	   
-	   
-	   
+
+
+	@Override
+	public String toString() {
+		return "Proveedor [idproveedores=" + idproveedores + ", nit=" + nit + ", razonsocial=" + razonsocial
+				+ ", telefono=" + telefono + ", direccion=" + direccion + ", ciudad=" + ciudad + ", ingreso=" + ingreso
+				+ "]";
+	}
+
+    
+
 }

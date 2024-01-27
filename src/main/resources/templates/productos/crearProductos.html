@@ -38,7 +38,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-solid fa-eye"></i>
                     </div>
@@ -66,9 +66,9 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="#">Ingresos</a>
-                            <a class="collapse-item" href="#">Egresos</a>
-                            <a class="collapse-item" href="#">Ajustes</a>
+                            <a class="collapse-item" href="">Ingresos</a>
+                            <a class="collapse-item" href="">Egresos</a>
+                            <a class="collapse-item" href="">Ajustes</a>
                         </div>
                     </div>
                 </li>
@@ -163,7 +163,7 @@
                     <div id="collapseReportes" class="collapse" aria-labelledby="collapseReportes"
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="#">Reportes</a>
+                            <a class="collapse-item" href="">Reportes</a>
 
                         </div>
                     </div>
@@ -223,30 +223,31 @@
                     
                     <h1>Crear Producto</h1>
                     <br>
-                     <form class="user" th:action="@{/productos/save}" method="post">
+                     <form class="user" th:action="@{/productos/save}"  method="post">
+						 <input type="hidden" th:field="*{id_produc}">
                                 <div class="form-group col">
                                     <div class="col-sm-6 mb-3 ">
-                                        <input type="text" class="form-control form-control-user" id="nombre" name="nombre"
+                                        <input type="text" class="form-control form-control-user"  th:field="*{producto.nombre}"
                                             placeholder="Nombre">
                                     </div>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="number" class="form-control form-control-user" id="existencia" name="existencia"
+                                        <input type="number" class="form-control form-control-user"  th:field="*{producto.existencia}"
                                             placeholder="Cantidad">
                                     </div>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="number" class="form-control form-control-user" id="precio" name="precio"
+                                        <input type="number" class="form-control form-control-user" th:field="*{producto.precio}" 
                                             placeholder="Precio">
                                     </div>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="date" class="form-control form-control-user" id="fecha_vencimiento" name="fecha_vencimiento"
+                                        <input type="date" class="form-control form-control-user" th:field="*{producto.fecha_vencimiento}" 
                                             placeholder="Fecha de Vencimiento">
                                     </div>
                                       <div class="col-sm-6 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="lote" name="lote"
+                                        <input type="text" class="form-control form-control-user" th:field="*{producto.lote}" 
                                             placeholder="Lote">
                                     </div>
                                       <div class="col-sm-6 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="registro_sanitario" name="registro_sanitario"
+                                        <input type="text" class="form-control form-control-user" th:field="*{producto.registro_sanitario}" 
                                             placeholder="Registro Sanitario">
                                     </div>
                                                                           

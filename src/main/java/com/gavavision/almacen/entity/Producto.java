@@ -3,6 +3,7 @@ package com.gavavision.almacen.entity;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,12 +13,12 @@ import jakarta.persistence.Table;
 
 
 
- 
+
  @Entity
  @Table(name = "Productos")
  public class Producto implements Serializable {
 	   /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -29,10 +30,10 @@ import jakarta.persistence.Table;
 	   private double precio;
 	   private Date fecha_vencimiento;
 	   private int existencia;
-	   
+
 	  @OneToMany(mappedBy = "producto")
 	  private List<DetalleIngreso>detalleIngreso;
-	  
+
 	  @OneToMany(mappedBy = "producto")
 	  private List<DetalleEgreso>detalleegreso;
 
@@ -134,6 +135,6 @@ import jakarta.persistence.Table;
 				+ ", existencia=" + existencia + ", detalleIngreso=" + detalleIngreso + ", detalleegreso="
 				+ detalleegreso + "]";
 	}
-	  
-	  
+
+
 }
